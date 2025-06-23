@@ -8,12 +8,14 @@ import { Text } from "react-native-paper";
 export default function TelefoneDetalhe() {
   const { id } = useLocalSearchParams();
 
+  // Guardando os itens
   const [telefone, setTelefone] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const navigation = useNavigation();
 
-  async function buscarTelefone() {
+  // Fazendo a mesma requisição do index.tsx, mas agora para um item específico
+  async function buscarOutrosDados() {
     setIsLoading(true);
     const resultado = await axios.get(`https://api.restful-api.dev/objects/${id}`);
     setTelefone(resultado.data);
@@ -21,8 +23,8 @@ export default function TelefoneDetalhe() {
   }
 
   useEffect(() => {
-    buscarTelefone();
-  }, [id]);
+      buscarOutrosDados();
+  }, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({
