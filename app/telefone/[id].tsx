@@ -40,15 +40,59 @@ export default function TelefoneDetalhe() {
     );
   }
 
+  // Verificando se data existe e se os valores estão corretos vindos da API
+  // Se não estiverem corretos, retorna "null"
   return (
     <View style={styles.container}>
       <Text variant="bodyLarge">ID: {id}</Text>
-      <Text variant="bodyLarge">Color: {telefone.data.color}</Text>
-      <Text variant="bodyLarge">Capacity: {telefone.data.capacity}</Text>
-      <Text variant="bodyLarge">Price: {telefone.data.price}</Text>
-      <Text variant="bodyLarge">Generation: {telefone.data.generation}</Text>
-      <Text variant="bodyLarge">Year: {telefone.data.year}</Text>
-      <Text variant="bodyLarge">Description: {telefone.data.Description}</Text>
+
+      <Text variant="bodyLarge">
+        Color: {telefone.data ? (telefone.data.color || telefone.data.Color || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Capacity: {telefone.data ? (telefone.data.capacity || telefone.data.Capacity || telefone.data["capacity GB"] || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Price: {telefone.data ? (telefone.data.price || telefone.data.Price || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Generation: {telefone.data ? (telefone.data.generation || telefone.data.Generation || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Year: {telefone.data ? (telefone.data.year || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Description: {telefone.data ? (telefone.data.Description || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Case Size: {telefone.data ? (telefone.data["Case Size"] || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        CPU model: {telefone.data ? (telefone.data["CPU model"] || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Hard disk size: {telefone.data ? (telefone.data["Hard disk size"] || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Strap Colour: {telefone.data ? (telefone.data["Strap Colour"] || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Screen size: {telefone.data ? (telefone.data["Screen size"] || "null") : "null"}
+      </Text>
+
+      <Text variant="bodyLarge">
+        Case Size: {telefone.data ? (telefone.data["Case Size"] || "null") : "null"}
+      </Text>
     </View>
   );
 }
